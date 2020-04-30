@@ -14,6 +14,10 @@ header {
     padding: 15px;
 }
 
+.left, .right {
+    height: 400px;
+}
+
 .center {
     margin: 0;
     padding: 5px;
@@ -27,17 +31,13 @@ header {
 .left {
     background: #0300FD;
     float: left;
-    width: 50%;
-    height: 200px;
-    
+    width: 50%;    
 }
 
 .right {
     background: #FE0001;
     float: right;
     width: 25%;
-    height: 200px;
-
 }
 
 footer {

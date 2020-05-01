@@ -70,4 +70,8 @@ footer {
     color: white;
     background-color: #4aaaa5;
 }
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
 

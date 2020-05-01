@@ -4,3 +4,4 @@ It contains the following folders:
 * HTML_BasicCSS_Assessment
 * CSS_Assessment
 * Bootstrap_Assessment
+* Module-1_Assessment

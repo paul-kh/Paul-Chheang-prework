@@ -5,3 +5,4 @@ It contains the following folders:
 * CSS_Assessment
 * Bootstrap_Assessment
 * Module-1_Assessment
+* JavaScript_Basics_Assessment

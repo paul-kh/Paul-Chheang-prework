@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guess Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>HANGMAN GAME</h1>
+            </div>
+        </div>
+        <div class="row mx-5 mt-5">
+            <div class="col-12 p-2 text-warning" id="description-panel">
+                <p id="description">Mario the Italian plumber. He travels through pipes.</p>
+            </div>
+        </div>
+        <div class="row p-0 mx-5">
+            <div class="col-6" id="img-panel">left</div>
+            <div class="col-6" id="game-info-panel">
+                <div class="row pt-3">
+                    <div class="col">
+                        <div class="row" id="start-game">
+                            <div class="col">
+                                <h3>PRESS ANY KEY TO GET STARTED!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 text-center" id="game-info">
+                    <div class="col-12 text-center mb-5">
+                        <h5>Current Word <br> <span id="current-word"> _ _ _ _ _ _ </span> </h5>
+                    </div>
+                    <div class="col-12">
+                        <p>Wins <br> <span id="wins">0</span> </p>
+                    </div>
+                    <div class="col-12">
+                        <p>Remaining guesses <br> <span id="remaining-guesses">0</span> </p>
+                    </div>
+                    <div class="col-12">
+                        <p>Letters Already Guessed <br> <span id="letters-guessed">0</span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/secret-words.js"></script>
+    <script src="assets/js/game.js"></script>
+</body>
+</html>

@@ -4,5 +4,6 @@ It contains the following folders:
 * HTML_BasicCSS_Assessment
 * CSS_Assessment
 * Bootstrap_Assessment
-* Module-1_Assessment
+* Module_1_Assessment
 * JavaScript_Basics_Assessment
+* Module_2_Assessment (Word Guess Game)

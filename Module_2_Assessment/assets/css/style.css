@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #006400;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+#description-panel {
+    text-align: center;
+    border: 1px white solid;
+    border-bottom: none;
+}
+
+#img-panel {
+    border: 1px white solid;
+    border-right: none;
+}
+
+#game-info-panel {
+    border: 1px white solid;
+}
+#start-game {
+    text-align: center;
+
+}
+#current-word {
+    color: red;
+    font-weight: 1000;
+}
+#wins, #remaining-guesses, #letters-guessed { 
+    color: yellow;
+    font-weight: 700;
+    text-align: center;
+}

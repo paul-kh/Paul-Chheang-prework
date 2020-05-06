@@ -21,19 +21,8 @@ const winsEl = document.getElementById("wins");
 const RemainingGuessesEl = document.getElementById("remaining-guesses");
 const lettersGuessedEl = document.getElementById("letters-guessed");
 
+// Reset life/number of remaining guesses
 const resetLife = () => remainingGuesses = 10;
-
-const shuffle = (array) => { //Fisher-Yates shuffle algorithm
-	let currentIndex = array.length, temporaryValue, randomIndex;
-	while (0 !== currentIndex) {
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
-	return array;
-};
 
 // Generate the current word and its relevant information
 const generateCurrentWord = () => {

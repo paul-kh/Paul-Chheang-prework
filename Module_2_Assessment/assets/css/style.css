@@ -8,12 +8,6 @@ body {
     
 }
 
-#description-panel {
-    text-align: center;
-    border: 1px white solid;
-    border-bottom: none;
-}
-
 #img-panel {
     border: 1px white solid;
     border-right: none;
@@ -24,6 +18,8 @@ body {
 }
 #start-game {
     text-align: center;
+    color: lightblue;
+    font-weight: 1000;
 
 }
 #current-word {

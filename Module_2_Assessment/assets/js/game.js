@@ -23,9 +23,20 @@ const lettersGuessedEl = document.getElementById("letters-guessed");
 
 const resetLife = () => remainingGuesses = 10;
 
+const shuffle = (array) => { //Fisher-Yates shuffle algorithm
+	let currentIndex = array.length, temporaryValue, randomIndex;
+	while (0 !== currentIndex) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
+};
+
 // Generate the current word and its relevant information
 const generateCurrentWord = () => {
-    // Generate current word by randomize the object array of secret words in the file secretWords.js
     let randIndex = Math.floor(Math.random() * secretWords.length);
     currentWord = secretWords[randIndex].word;
     console.log("Current word: ", currentWord);

@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
+        <div class="row bg-dark">
+            <div class="col text-center pt-3">
                 <h1>HANGMAN GAME</h1>
             </div>
         </div>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="row p-0 mx-5">
-            <div class="col-4" id="img-panel">left</div>
+            <div class="col-4 text-center" id="img-panel"><img id="image" src=""></div>
             <div class="col-8" id="game-info-panel">
                 <div class="row pt-3">
                     <div class="col">
@@ -33,17 +33,17 @@
                     </div>
                 </div>
                 <div class="row mt-3 text-center" id="game-info">
-                    <div class="col-12 text-center mb-5">
-                        <p>Current Word <br> <span id="current-word"> </p> </h>
+                    <div class="col-12 text-center">
+                        <p class="label">Current Word </p> <p id="current-word"> </p>
                     </div>
                     <div class="col-12">
-                        <p>Wins <br> <span id="wins"></span> </p>
+                        <p class="label">Wins </p> <p id="wins"></p>
                     </div>
                     <div class="col-12">
-                        <p>Remaining guesses <br> <span id="remaining-guesses"></span> </p>
+                        <p class="label">Remaining guesses </p> <p id="remaining-guesses"></p> 
                     </div>
                     <div class="col-12">
-                        <p>Letters Already Guessed <br> <span id="letters-guessed"></span> </p>
+                        <p class="label">Letters Already Guessed </p> <p id="letters-guessed"></p>
                     </div>
                 </div>
             </div>

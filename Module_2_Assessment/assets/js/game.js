@@ -1,4 +1,3 @@
-
 // Global variables
 let guess = "";
 let currentWord = "";
@@ -10,17 +9,19 @@ let wins = 0;
 let remainingGuesses = 0;
 let lettersGuessed = [];
 const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const audio = new Audio();
 
 // DOM elements
 const wordDescriptionEl = document.getElementById("description");
 const gameInfoEl = document.getElementById("game-info");
+const imgageEl = document.getElementById("image");
 const startGameEl = document.getElementById("start-game");
 const currentWordEl = document.getElementById("current-word");
 const winsEl = document.getElementById("wins");
 const RemainingGuessesEl = document.getElementById("remaining-guesses");
 const lettersGuessedEl = document.getElementById("letters-guessed");
 
-const resetLife = () => remainingGuesses = 2;
+const resetLife = () => remainingGuesses = 10;
 
 // Generate the current word and its relevant information
 const generateCurrentWord = () => {
@@ -31,7 +32,6 @@ const generateCurrentWord = () => {
     currentIndex = randIndex;
     imageURL = secretWords[randIndex].image;
     wordDescription = secretWords[randIndex].description;
-
 }
 
 // Hash/Mask the current word
@@ -49,6 +49,9 @@ const showHashedWord = hashArr => currentWordEl.innerHTML = hashArr.join("&nbsp;
 const showNumWins = () => winsEl.innerHTML = wins;
 const showRemainingGuesses = () => RemainingGuessesEl.innerHTML = remainingGuesses;
 const showLettersAlreadyGuessed = () => lettersGuessedEl.innerHTML = lettersGuessed.join(", ");
+const showDescription = () => wordDescriptionEl.innerHTML = wordDescription;
+const showImage = () => imgageEl.setAttribute("src", imageURL);
+const showDefaultImage = () => imgageEl.setAttribute("src", "assets/images/hangman.png");
 
 // Reveal the description of the current word
 const RevealWordDescription = () => wordDescriptionEl.innerHTML = wordDescription;
@@ -100,8 +103,12 @@ const determineWinner = () => {
     if (!hashArray.includes("_")) {
         wins = wins + 1;
         winsEl.innerHTML = wins;
+        showDescription();
+        showImage();
+        playWinnerSound();
         setTimeout(() => {
             alert("You are the WINNER!!!");
+            stopWinnerSound();
             resetGame();
         }, 100);
     }
@@ -110,8 +117,12 @@ const determineWinner = () => {
 // Determine looser if there's life/remaining guesses become 0.
 const determineLooser = (life, secrettWord) => {
     if (life == 0) {
+        showDescription();
+        showImage();
+        playLooserSound();
         setTimeout(() => {
             alert("You are the LOOSER!!! \n The secret word is " + secrettWord);
+            stopLooserSound();
             resetGame();
         }, 100);
     }
@@ -124,6 +135,30 @@ const storeGuesses = (guess) => {
         lettersGuessed.push(guess);
     } else letterAlreadyStored = true;
     return letterAlreadyStored;
+}
+
+// Play winner sound
+const playWinnerSound = () => {   
+    audio.src = "assets/audio/victory.wav";
+    audio.play();
+}
+
+// Stop winner sound
+const stopWinnerSound = () => {
+    audio.src = "assets/audio/victory.wav";
+    audio.pause();
+    audio.currentTime = 0;
+}
+// Play looser sound
+const playLooserSound = () => {   
+    audio.src = "assets/audio/Sad_Trombone.wav";
+    audio.play();
+}
+
+const stopLooserSound = () => {
+    audio.src = "assets/audio/victory.wav";
+    audio.pause();
+    audio.currentTime = 0;
 }
 
 // Reset the game
@@ -143,6 +178,7 @@ const resetGame = () => {
 
 // Excutes the logics
 resetLife();
+showDefaultImage();
 generateCurrentWord();
 hashCurrentWord(currentWord);
 showHashedWord(hashArray);

@@ -198,7 +198,6 @@ showRemainingGuesses();
 showLettersAlreadyGuessed();
 document.onkeypress = (event) => {
     guess = event.key.toUpperCase();
-    console.log(guess);
     // Check to make sure that the user pressed alphabet key
     // checkUserInput(event.key.toUpperCase());
     if (alphabetKeyPress(guess)) {

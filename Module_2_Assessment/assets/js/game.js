@@ -156,7 +156,7 @@ const playLooserSound = () => {
 }
 
 const stopLooserSound = () => {
-    audio.src = "assets/audio/victory.wav";
+    audio.src = "assets/audio/Sad_Trombone.wav";
     audio.pause();
     audio.currentTime = 0;
 }

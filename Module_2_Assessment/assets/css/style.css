@@ -30,7 +30,7 @@ body {
 }
 #start-game {
     text-align: center;
-    color: lightyellow;
+    color: white;
     font-weight: 1000;
     animation: blinker 2s linear infinite;
 }
